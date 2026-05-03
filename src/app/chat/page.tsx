@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import ChatInterface from "@/components/ChatInterface";
 
 export const metadata = {
@@ -9,7 +10,9 @@ export default function ChatPage() {
   return (
     // Full viewport chat page with no inner white panels to match design
     <div className="min-h-screen w-full">
-      <ChatInterface />
+      <Suspense fallback={null}>
+        <ChatInterface />
+      </Suspense>
     </div>
   );
 }
