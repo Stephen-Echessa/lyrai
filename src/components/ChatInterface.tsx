@@ -168,8 +168,7 @@ export default function ChatInterface() {
   }
 
   useEffect(() => {
-    const wsUrl = process.env.CHATBOT_WEBSOCKET_URL
-    console.log("Chatbot Websocket URL:", wsUrl)
+    const wsUrl = process.env.NEXT_PUBLIC_WS_URL || "ws://localhost:8000"
     const websocket = new WebSocket(`${wsUrl}/ws/chat`);
     websocket.onopen = () => {
       console.log("WebSocket connected");
